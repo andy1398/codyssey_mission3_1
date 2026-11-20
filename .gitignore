@@ -1,0 +1,9 @@
+# credentials / local environments
+*.pem
+*.key
+.env
+.env.*
+!.env.example
+.aws/
+.DS_Store
+__pycache__/
