@@ -1,0 +1,68 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 1120 790] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Length 2275 >>
+stream
+0.97 0.98 1 rg 0 0 1120 790 re f
+0.11 0.19 0.31 rg BT /F1 28 Tf 58 737 Td (AWS MISSION 3-1  |  CLOUD WEB SERVICE ARCHITECTURE) Tj ET
+0.11 0.19 0.31 rg BT /F1 16 Tf 59 702 Td (Seoul Region: ap-northeast-2  /  Validated 2026-11-20) Tj ET
+0.88 0.95 1 rg 40 486 240 155 re f
+0.35 0.51 0.77 RG 1.8 w 40 486 240 155 re S
+0.11 0.19 0.31 rg BT /F1 20 Tf 68 585 Td (EXTERNAL CLIENT) Tj ET
+0.11 0.19 0.31 rg BT /F1 17 Tf 68 547 Td (Browser / curl) Tj ET
+0.11 0.19 0.31 rg BT /F1 17 Tf 68 512 Td (HTTP TCP 80) Tj ET
+1 0.94 0.82 rg 330 486 278 155 re f
+0.35 0.51 0.77 RG 1.8 w 330 486 278 155 re S
+0.11 0.19 0.31 rg BT /F1 19 Tf 357 585 Td (INTERNET GATEWAY) Tj ET
+0.11 0.19 0.31 rg BT /F1 16 Tf 357 549 Td (cloud-mission-igw) Tj ET
+0.11 0.19 0.31 rg BT /F1 12 Tf 357 512 Td (igw-0ec0d51aee9062b57) Tj ET
+0.16 0.42 0.79 RG 3 w 282 561 m 327 561 l S
+0.88 0.94 1 rg 642 134 437 535 re f
+0.35 0.51 0.77 RG 1.8 w 642 134 437 535 re S
+0.11 0.19 0.31 rg BT /F1 22 Tf 664 628 Td (VPC: cloud-mission-vpc) Tj ET
+0.11 0.19 0.31 rg BT /F1 17 Tf 664 595 Td (10.0.0.0/16) Tj ET
+1 1 1 rg 664 448 395 109 re f
+0.35 0.51 0.77 RG 1.8 w 664 448 395 109 re S
+0.11 0.19 0.31 rg BT /F1 18 Tf 680 523 Td (PUBLIC ROUTE TABLE) Tj ET
+0.11 0.19 0.31 rg BT /F1 15 Tf 680 490 Td (10.0.0.0/16 -> local) Tj ET
+0.11 0.19 0.31 rg BT /F1 15 Tf 680 463 Td (0.0.0.0/0 -> IGW) Tj ET
+0.9 0.98 0.92 rg 664 170 395 239 re f
+0.35 0.51 0.77 RG 1.8 w 664 170 395 239 re S
+0.11 0.19 0.31 rg BT /F1 17 Tf 684 376 Td (PUBLIC SUBNET  10.0.1.0/24) Tj ET
+0.11 0.19 0.31 rg BT /F1 15 Tf 684 347 Td (ap-northeast-2a) Tj ET
+1 1 1 rg 686 197 351 125 re f
+0.35 0.51 0.77 RG 1.8 w 686 197 351 125 re S
+0.11 0.19 0.31 rg BT /F1 18 Tf 706 286 Td (EC2: Amazon Linux 2023) Tj ET
+0.11 0.19 0.31 rg BT /F1 15 Tf 706 260 Td (t3.micro / Nginx 1.30.7) Tj ET
+0.11 0.19 0.31 rg BT /F1 13 Tf 706 236 Td (SG: TCP 80 public; SSH 22 own IP /32) Tj ET
+0.11 0.19 0.31 rg BT /F1 12 Tf 706 212 Td (Private: 10.0.1.15 | Public: 3.36.115.9) Tj ET
+0.16 0.42 0.79 RG 3 w 610 561 m 637 561 l S
+0.16 0.42 0.79 RG 3 w 860 443 m 860 410 l S
+0.11 0.19 0.31 rg BT /F1 16 Tf 54 91 Td (Observed: SSH login success  |  localhost HTTP 200  |  outbound HTTPS 200) Tj ET
+0.11 0.19 0.31 rg BT /F1 16 Tf 54 61 Td (External browser: http://3.36.115.9 -> Welcome to nginx!) Tj ET
+endstream
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000242 00000 n 
+0000000312 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+2638
+%%EOF
