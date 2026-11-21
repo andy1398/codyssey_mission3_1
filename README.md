@@ -54,6 +54,12 @@ curl -s -o /dev/null -w '%{http_code}\n' http://3.36.115.9/
 
 외부 브라우저의 GET 기반 페이지 표시는 [외부 접속 증빙](docs/external-access.png)에서 이미 확인했다.
 
+**추가 수행한 HTTP GET 검증 (2026-11-21):** EC2에 SSH 접속한 터미널에서 `curl -i http://3.36.115.9/`를 실행해 `HTTP/1.1 200 OK`, `Server: nginx/1.30.7` 및 HTML 본문 반환을 확인했다. 이는 **EC2 내부에서 퍼블릭 IP로 요청한 결과**이며, 독립된 외부 클라이언트 검증은 위 브라우저 스크린샷을 참고한다.
+
+![HTTP GET 200 응답](https://github.com/user-attachments/assets/4f98a56b-d9ac-4f3c-b099-f501b7329de0)
+
+[HTTP GET 응답 스크린샷 원본](https://github.com/user-attachments/assets/4f98a56b-d9ac-4f3c-b099-f501b7329de0)
+
 ### 추가 확인
 
 ```bash
