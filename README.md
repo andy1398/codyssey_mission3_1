@@ -44,7 +44,7 @@ Content-Type: text/html
 Content-Length: 896
 ```
 
-`curl -I`는 HTTP **HEAD** 요청이므로 본문을 내려받지 않는다. 별도 **GET 요청 출력**까지 제출하려면 다음 명령을 Mac 터미널에서 실행해 결과를 캡처한다 (아래는 **실행할 명령어이며 아직 결과를 기록하지 않음**).
+`curl -I`는 HTTP **HEAD** 요청이므로 본문을 내려받지 않는다. 아래 명령은 추가 검증 및 재검증에 사용한다. GET 검증은 2026-11-21에 실제 실행했다.
 
 ```bash
 curl -i http://3.36.115.9/
@@ -71,6 +71,18 @@ curl -I http://localhost
 curl -I https://example.com
 # HTTP/2 200
 ```
+
+### 추가 실습 증빙
+
+**EC2 아웃바운드 인터넷 통신:** EC2 터미널의 `curl -I https://example.com` 응답 `HTTP/2 200`.
+
+![EC2 아웃바운드 인터넷 통신 검증 성공](https://github.com/user-attachments/assets/fa27b095-fbdd-476d-ab1a-e5a3a5ad7743)
+
+**Nginx 실행 및 내부 HTTP 검증:** `systemctl status nginx`의 `active (running)` 상태와 `curl -I http://localhost` 실행 장면. HTTP 200 응답은 위의 실제 터미널 출력 기록에 별도로 제시했다.
+
+![Nginx 실행 및 localhost 검사](https://github.com/user-attachments/assets/3489ef24-d410-4a01-b531-5a932ce62063)
+
+> 위 두 이미지는 GitHub 이슈 첨부 링크로 포함했다. 저장소 내부 PNG 독립 파일로 보관하려면 추후 `docs/`에 별도로 업로드하면 된다.
 
 ### 보안 그룹
 
