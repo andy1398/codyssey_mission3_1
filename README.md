@@ -43,7 +43,15 @@ curl -I https://example.com
 | SSH | TCP/22 | 실습 당시 개인 공인 IP `121.135.181.35/32` | 관리용 SSH 제한 |
 | HTTP | TCP/80 | `0.0.0.0/0` | 외부 웹 서비스 접속 |
 
-보안 그룹은 인스턴스 트래픽을 제어하고, IAM 정책은 AWS API/콘솔 작업 권한을 제어한다. `AdministratorAccess` 없이 실습 범위를 한정하는 IAM 정책을 생성했다. **정책의 실제 전체 작업 목록에 대한 최종 감사는 별도 확인 필요**.
+보안 그룹은 인스턴스 트래픽을 제어하고, IAM 정책은 AWS API/콘솔 작업 권한을 제어한다. `AdministratorAccess` 없이 실습 범위를 한정하는 IAM 정책을 생성했다. 2026-11-21에 확인한 사용자 지정 정책 JSON 기준으로, `ec2:Describe*` 및 실습에 필요한 생성·연결·보안 그룹·인스턴스·태그·정리 작업을 허용하고 `aws:RequestedRegion = ap-northeast-2` 조건을 적용했다. **다른 사용자·그룹 연결 정책까지 포함한 유효 권한 전체 감사 및 리소스별 세분화는 수행하지 않았다.**
+
+## IAM 최소권한 검토
+
+- 정책: `CloudMissionLeastPrivilegePolicy` (그룹 `cloud-mission-group`에 연결)
+- EC2 서비스 관련 조회·생성·수정·삭제를 명시적으로 허용하며 서울 리전 조건을 적용함
+- S3, RDS, `AdministratorAccess` 허용 문은 **확인한 JSON에 없음**
+- `ec2:Describe*` 및 `Resource: "*"`는 일부 조회에 필요할 수 있지만, 자원 단위의 최협의 최소권한은 아님
+- 권한 관리 역할과 네트워크 보안 그룹의 역할이 다름: IAM은 AWS API 조작 권한, Security Group은 서버 TCP 트래픽 접근 제어
 
 ## 제출 자료
 
@@ -65,7 +73,7 @@ curl -I https://example.com
 
 ## 운영 및 비용
 
-EC2, EBS, 퍼블릭 IPv4 등은 사용량에 따라 요금이나 무료 크레딧 차감이 발생할 수 있다. **문서 작성만으로 리소스가 삭제되는 것은 아니다.** 반드시 [정리 체크리스트](docs/cleanup-checklist.md)에 따라 서울 리전의 실제 AWS 리소스를 삭제·검증해야 한다.
+**2026-11-21 현재 평가 대기 중으로 인스턴스를 유지하기로 결정했다.** EC2, EBS, 퍼블릭 IPv4 등은 사용량에 따라 요금이나 무료 크레딧 차감이 발생할 수 있다. **문서 작성만으로 리소스가 삭제되는 것은 아니다.** 반드시 [정리 체크리스트](docs/cleanup-checklist.md)에 따라 서울 리전의 실제 AWS 리소스를 삭제·검증해야 한다.
 
 ## 비밀 정보 관리
 
