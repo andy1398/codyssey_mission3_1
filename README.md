@@ -22,6 +22,12 @@
 - **검증 방식:** (A) 외부 브라우저에서 HTTP 페이지 열기
 - **당시 확인 URL:** http://3.36.115.9
 - **검증 결과:** 외부 Safari 브라우저에서 **Welcome to nginx!** 페이지 확인
+
+### 외부 접속 증빙 스크린샷
+
+![external-access](https://github.com/user-attachments/assets/eb089327-d5fc-40a8-851e-172fa8839458)
+
+[증빙 이미지 원본 보기](https://github.com/user-attachments/assets/eb089327-d5fc-40a8-851e-172fa8839458)
 - **주의:** 퍼블릭 IPv4는 인스턴스 중지/재시작 시 달라질 수 있으며, 실습 정리 후 URL은 더 이상 유효하지 않음
 
 ### 추가 확인
@@ -58,7 +64,7 @@ curl -I https://example.com
 - [아키텍처 다이어그램](docs/architecture.pdf) — 인터넷 → IGW → 라우팅 → Public Subnet → SG → EC2/Nginx 트래픽 구조
 - [트러블슈팅 보고서](docs/troubleshooting.md) — 실제 CIDR 중복 오류 및 검증 내용
 - [리소스 정리 체크리스트](docs/cleanup-checklist.md) — 삭제 후 실제 완료 여부를 체크할 것
-- 외부 접속 증빙: `docs/screenshots/external-access.png` **추가 필요** (대화에서 확인된 실제 스크린샷을 이 경로에 업로드)
+- 외부 접속 증빙: [README에 삽입된 GitHub 이슈 첨부 이미지](https://github.com/user-attachments/assets/eb089327-d5fc-40a8-851e-172fa8839458) (저장소 내부의 별도 PNG 파일이 아닌 GitHub 첨부 이미지 URL 사용)
 
 ## 사용 명령
 
